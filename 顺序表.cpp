@@ -70,7 +70,7 @@ int SearchByPos(sqList& L, int p) {
 //查找第1个出现x的位置
 int SearchByVal(sqList& L, int x) {
     for(int i = 0; i < L.length; i++) {
-        if(x == L.data[i]) return i;
+        if(x == L.data[i]) return i+1;
     }
     return -1;
 }
