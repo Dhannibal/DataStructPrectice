@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 const int maxn = 1e5+5;
 
@@ -10,6 +11,18 @@ typedef struct{
 void init(sqList& L) {
     L.length = 0;
 }
+
+/*
+typedef struct{
+    int* data;
+    int length;
+}sqList;
+void init(sqList& L) {
+    L.length = 0;
+    L.data = (int *)malloc(sizeof(sqList)*100);
+    // L.data = new int[100];
+}
+*/
 
 //把x插入到第p个位置[1, length+1]上
 bool insert(sqList& L, int p, int x) {
@@ -62,7 +75,7 @@ int SearchByVal(sqList& L, int x) {
     return -1;
 }
 
-//输出顺序表
+//输出
 void print(sqList& L) {
     if(L.length == 0) puts("顺序表为空!");
     for(int i = 0; i < L.length; i++) {
